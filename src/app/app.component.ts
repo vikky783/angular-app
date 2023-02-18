@@ -1,10 +1,8 @@
 import {Component} from '@angular/core'
 
 @Component({
-  selector:"app-root",
-  template:`<h2> Coders Rock !!!</h2>
-  <h2> This is test for coders</h2> 
-  `,
+  selector:".app-root",
+  templateUrl: "./app.component.html",
   styles:[`h2{
     color:red;
   }`]
