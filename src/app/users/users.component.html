@@ -1,0 +1,21 @@
+<p>{{user}} works!</p>
+
+<p>{{age}}</p>
+
+<!-- <img [src]="img" /> -->
+
+<div class="card" style = "width:300 px;" appHighlight>
+  <ng-content></ng-content>
+    <div class="card-image">
+      <img [src]="img">
+      <span class="card-title">{{user}}</span>
+    </div>
+    <div class="card-content">
+        <p>{{user}} works!</p>
+
+        <p>{{age}}</p>
+    </div>
+    <ng-content select = "h3"></ng-content>
+  </div>
+
+  <button class = "btn pink" (click) = "passData()"> Pass data to Parent</button>

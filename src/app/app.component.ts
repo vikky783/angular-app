@@ -1,4 +1,5 @@
 import {Component} from '@angular/core'
+import { User } from 'src/models/user'
 
 @Component({
   selector:".app-root",
@@ -9,5 +10,16 @@ import {Component} from '@angular/core'
 })
 
 export class AppComponent{
+  phoneNo='9600645788'
+title:string = 'header';
+show=true;
+  users: Array<User> = [
+    {user: "mukesh", age:20,imagePath:"assets/Vikky Image.jpg"},
+    
+  ]
+
+  receivedDatas(e:any){
+    console.log(e)
+  }
 
 }

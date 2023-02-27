@@ -1,4 +1,22 @@
-<my-profile></my-profile>
-<my-profile></my-profile><my-profile></my-profile>
-<my-profile></my-profile>
-<my-profile></my-profile>
+<div *ngIf="show" style = "display: flex; justify-content: space-around; flex-wrap: wrap;">
+<app-users 
+*ngFor="let user of users " 
+  [user]=user.user 
+  [age]=user.age 
+  [img]=user.imagePath
+  (myevents) = "receivedDatas($event)" 
+  [title] = "title">
+  
+  
+  <h2> {{title}}</h2>
+
+
+  <input type="text" [(ngModel)]="title"/>
+
+</app-users>
+<!-- <app-users [user] = users[1].user  [age] = users[1].age [img]=users[1].imagePath></app-users  >
+<app-users [user] = users[2].user  [age] = users[2].age [img]=users[2].imagePath></app-users  > -->
+
+</div>
+<h1 > {{phoneNo | ccode}}</h1>
+<button  class="btn red" (click) = "show = !show">Click</button>

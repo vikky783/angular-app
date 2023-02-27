@@ -1,0 +1,40 @@
+<h1>
+    I am {{name | titlecase}} my age is {{age}}
+    my status is {{status}} and my salary is {{salary | currency}}
+</h1>
+ <!-- datapipe -->
+<input type = "date" [(ngModel)] = "myDate">
+{{myDate | date : 'dd MMMM YYYY'}}
+<!-- {{myDate | date : 'fullDate'}} -->
+
+<!-- property binding -->
+<button [class]="btnColor">Click Me</button>
+
+<!-- event binding -->
+<button class="btn black" (click)="convertToINR()" >Show me salry in INR</button>
+
+<input type="text" [value]="inputValue" (input) = " inputValue =$any($event.target).value"/>
+
+<!-- two way data binding -->
+<input type = "text" [(ngModel)]="inputValue"/>
+<h1>{{inputValue}}</h1>
+
+
+<h3 *ngIf = "salary > 50 ; else lowsal"> Party To Dedo Bhai</h3>
+<ng-template #lowsal>
+    <h3> Party ki Aukat nai hai Teri</h3>
+</ng-template>
+<!-- directive -->
+<ul>
+    <!-- <li *ngFor = "let f of fruits; index as i; even as e"><h1>{{i+1}} {{f}} {{e}}</h1> </li>  -->
+    <!-- <li *ngFor = "let f of fruits; index as i; even as e" [class] = "e? 'red':'blue'"> -->
+
+        <li *ngFor = "let f of fruits; index as i; even as e" [ngClass] = "{'red':e, 'pink':!e}">
+        <!-- <h1 *ngIf="e"> -->
+            <h1>
+            {{i}} - {{f}}
+        </h1>
+</ul>
+
+
+ 
